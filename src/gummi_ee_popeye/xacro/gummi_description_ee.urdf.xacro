@@ -1,0 +1,881 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot
+  name="gummi">
+  <link
+    name="lowerarm_preroll_d">
+    <inertial>
+      <origin
+        xyz="0.0201145573860685 0.000669151743296995 -0.00744229215534365"
+        rpy="0 0 0" />
+      <mass
+        value="0.0734230815881974" />
+      <inertia
+        ixx="1.01515477360727E-05"
+        ixy="4.32433603525769E-08"
+        ixz="7.12477985310256E-06"
+        iyy="1.51518258319088E-05"
+        iyz="-6.16118497879196E-08"
+        izz="5.00102599358937E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_ee_$(env ROS_GUMMI_EE)/meshes/lowerarm_preroll_d.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_ee_$(env ROS_GUMMI_EE)/meshes/lowerarm_preroll_d.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="fastswitch" type="fixed">
+    <origin rpy="0 0 0" xyz="0.057 -0.019 -0.005"/>
+    <parent link="lowerarm_preroll_u"/>
+    <child link="lowerarm_preroll_d"/>
+
+  </joint>
+
+  <link
+    name="lowerarm">
+    <inertial>
+      <origin
+        xyz="0.0946496953755679 -0.000120356527291464 -0.00129517524906059"
+        rpy="0 0 0" />
+      <mass
+        value="0.181304112038073" />
+      <inertia
+        ixx="5.20535334976771E-05"
+        ixy="1.23954508362984E-06"
+        ixz="-1.5126823036687E-05"
+        iyy="0.000292605338929578"
+        iyz="4.73837407418085E-07"
+        izz="0.000245834375584184" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_ee_$(env ROS_GUMMI_EE)/meshes/lowerarm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_ee_$(env ROS_GUMMI_EE)/meshes/lowerarm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="forearm_roll"
+    type="revolute">
+    <origin
+      xyz="0.0073346 0.00058424 -0.028344"
+      rpy="0 0 0" />
+    <parent
+      link="lowerarm_preroll_d" />
+    <child
+      link="lowerarm" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="wrist">
+    <inertial>
+      <origin
+        xyz="0.0155109020638096 0.0247217069682795 -8.97016135974898E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0612417575034934" />
+      <inertia
+        ixx="2.17909064975224E-05"
+        ixy="-1.75146735374738E-07"
+        ixz="7.08623219383127E-09"
+        iyy="1.38582932310292E-05"
+        iyz="4.31485803558046E-11"
+        izz="3.56491921024227E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_ee_$(env ROS_GUMMI_EE)/meshes/wrist.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_ee_$(env ROS_GUMMI_EE)/meshes/wrist.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wrist_pitch"
+    type="revolute">
+    <origin
+      xyz="0.16463 -0.024 0"
+      rpy="0 0 0" />
+    <parent
+      link="lowerarm" />
+    <child
+      link="wrist" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="gbase">
+    <inertial>
+      <origin
+        xyz="0.0375396345255545 0.000258621653510823 0.000308025751646932"
+        rpy="0 0 0" />
+      <mass
+        value="0.112572451212744" />
+      <inertia
+        ixx="3.46149816301849E-08"
+        ixy="3.71824830981742E-07"
+        ixz="-8.88625729821223E-07"
+        iyy="5.74238369795189E-05"
+        iyz="8.8502104967547E-09"
+        izz="5.74191745262333E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_ee_$(env ROS_GUMMI_EE)/meshes/gbase.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_ee_$(env ROS_GUMMI_EE)/meshes/gbase.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gdovetail"
+    type="fixed">
+    <origin
+      xyz="0.043 0.02425 0"
+      rpy="0 0 0" />
+    <parent
+      link="wrist" />
+    <child
+      link="gbase" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="g_camera">
+    <inertial>
+      <origin
+        xyz="-0.0130038062547488 0.000414347997380345 -0.00115139779329799"
+        rpy="0 0 0" />
+      <mass
+        value="0.0054126706518889" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_ee_$(env ROS_GUMMI_EE)/meshes/g_camera.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_ee_$(env ROS_GUMMI_EE)/meshes/g_camera.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="g_c_j"
+    type="fixed">
+    <origin
+      xyz="0.078543 5.1126E-05 0.00058816"
+      rpy="0 0 0" />
+    <parent
+      link="gbase" />
+    <child
+      link="g_camera" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="g_um">
+    <inertial>
+      <origin
+        xyz="0.00245238145288562 -0.0217265687128561 -0.0105911469473412"
+        rpy="0 0 0" />
+      <mass
+        value="0.0108804943967655" />
+      <inertia
+        ixx="8.08735422601889E-08"
+        ixy="4.97110946899304E-08"
+        ixz="-1.39273928121627E-09"
+        iyy="4.53539384016324E-08"
+        iyz="6.17358200741367E-10"
+        izz="1.26078407713655E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_ee_$(env ROS_GUMMI_EE)/meshes/g_um.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_ee_$(env ROS_GUMMI_EE)/meshes/g_um.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="g_um_j"
+    type="revolute">
+    <origin
+      xyz="0.03142 0.026601 0.037328"
+      rpy="0 0 0" />
+    <parent
+      link="gbase" />
+    <child
+      link="g_um" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="1"
+      effort="0"
+      velocity="0" />
+      <mimic joint="gripper" multiplier="1"/>
+
+  </joint>
+  <link
+    name="g_lf">
+    <inertial>
+      <origin
+        xyz="0.0153897110690098 -0.039231067943855 -0.0320049144465503"
+        rpy="0 0 0" />
+      <mass
+        value="0.038256465784836" />
+      <inertia
+        ixx="2.65326631113254E-06"
+        ixy="-2.17990122996235E-07"
+        ixz="3.30558009736168E-06"
+        iyy="1.17585205630411E-05"
+        iyz="-4.57723963439691E-07"
+        izz="1.19399763721664E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_ee_$(env ROS_GUMMI_EE)/meshes/g_lf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_ee_$(env ROS_GUMMI_EE)/meshes/g_lf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="g_lf_j"
+    type="revolute">
+    <origin
+      xyz="0.027486 -0.047634 0.0012399"
+      rpy="0 0 0" />
+    <parent
+      link="g_um" />
+    <child
+      link="g_lf" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="0"
+      velocity="0" />
+      <mimic joint="g_um_j" multiplier="-1"/>
+  </joint>
+  <link
+    name="g_ll">
+    <inertial>
+      <origin
+        xyz="0.00226717834928669 0.0217265688385826 0.0106323527694793"
+        rpy="0 0 0" />
+      <mass
+        value="0.0108804855685434" />
+      <inertia
+        ixx="8.08387078665914E-08"
+        ixy="-4.97142942470438E-08"
+        ixz="6.03107412291824E-10"
+        iyy="4.53539041706008E-08"
+        iyz="-2.50308381825711E-10"
+        izz="1.26113207738849E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_ee_$(env ROS_GUMMI_EE)/meshes/g_ll.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_ee_$(env ROS_GUMMI_EE)/meshes/g_ll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="g_ll_j"
+    type="revolute">
+    <origin
+      xyz="0.032066 -0.026399 -0.036669"
+      rpy="0 0 0" />
+    <parent
+      link="gbase" />
+    <child
+      link="g_ll" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="1"
+      effort="0"
+      velocity="0" />
+    <mimic joint="gripper" multiplier="1"/>
+  </joint>
+  <link
+    name="g_mf">
+    <inertial>
+      <origin
+        xyz="0.0148288048633209 0.0392310678850323 0.0322686275479262"
+        rpy="0 0 0" />
+      <mass
+        value="0.0382564656776473" />
+      <inertia
+        ixx="2.77145795698025E-06"
+        ixy="2.25945432966937E-07"
+        ixz="-3.46561709988175E-06"
+        iyy="1.17585203696665E-05"
+        iyz="-4.53849748694103E-07"
+        izz="1.18217845320535E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_ee_$(env ROS_GUMMI_EE)/meshes/g_mf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_ee_$(env ROS_GUMMI_EE)/meshes/g_mf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="g_mf_j"
+    type="revolute">
+    <origin
+      xyz="0.027504 0.047634 -0.00076002"
+      rpy="0 0 0" />
+    <parent
+      link="g_ll" />
+    <child
+      link="g_mf" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="0"
+      velocity="0" />
+      <mimic joint="g_ll_j" multiplier="-1"/>
+  </joint>
+  <link
+    name="g_ug">
+    <inertial>
+      <origin
+        xyz="0.000109428789818455 -0.000219125965887957 -0.00464704345456175"
+        rpy="0 0 0" />
+      <mass
+        value="0.00302052629871028" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_ee_$(env ROS_GUMMI_EE)/meshes/g_ug.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_ee_$(env ROS_GUMMI_EE)/meshes/g_ug.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="g_ug_j"
+    type="continuous">
+    <origin
+      xyz="0.031532 -0.017387 0.031329"
+      rpy="0 0 0" />
+    <parent
+      link="gbase" />
+    <child
+      link="g_ug" />
+    <axis
+      xyz="0 0 1" />
+      <mimic joint="g_um_j" multiplier="-3"/>
+  </joint>
+  <link
+    name="g_lg">
+    <inertial>
+      <origin
+        xyz="-3.89063724342276E-05 0.000229668637375367 0.00464765876845594"
+        rpy="0 0 0" />
+      <mass
+        value="0.00302052576429481" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_ee_$(env ROS_GUMMI_EE)/meshes/g_lg.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_ee_$(env ROS_GUMMI_EE)/meshes/g_lg.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="g_lg_j"
+    type="continuous">
+    <origin
+      xyz="0.032073 0.017589 -0.030669"
+      rpy="0 0 0" />
+    <parent
+      link="gbase" />
+    <child
+      link="g_lg" />
+    <axis
+      xyz="0 0 -1" />
+      <mimic joint="g_ll_j" multiplier="-3"/>
+  </joint>
+  <link
+    name="g_mfl">
+    <inertial>
+      <origin
+        xyz="0.013424557472145 0.0238167544532381 0.0371185632355853"
+        rpy="0 0 0" />
+      <mass
+        value="0.00820991344622182" />
+      <inertia
+        ixx="5.76455145604002E-06"
+        ixy="-8.05406743776988E-15"
+        ixz="5.03048903631686E-08"
+        iyy="5.76499044630889E-06"
+        iyz="9.22933850769957E-13"
+        izz="4.38990269164963E-10" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_ee_$(env ROS_GUMMI_EE)/meshes/g_mfl.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_ee_$(env ROS_GUMMI_EE)/meshes/g_mfl.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="g_mfl_j"
+    type="revolute">
+    <origin
+      xyz="0.032066 0.041601 -0.036669"
+      rpy="0 0 0" />
+    <parent
+      link="gbase" />
+    <child
+      link="g_mfl" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="0"
+      velocity="0" />
+      <mimic joint="g_ll_j"/>
+  </joint>
+  <link
+    name="g_lfl">
+    <inertial>
+      <origin
+        xyz="0.0140702561706355 -0.0238167919441672 -0.0368786196319928"
+        rpy="0 0 0" />
+      <mass
+        value="0.00820991344622177" />
+      <inertia
+        ixx="5.76455140068273E-06"
+        ixy="-7.94649094794774E-15"
+        ixz="5.03080617779889E-08"
+        iyy="5.76499044630886E-06"
+        iyz="9.10549003590232E-13"
+        izz="4.39045626410298E-10" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_ee_$(env ROS_GUMMI_EE)/meshes/g_lfl.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_ee_$(env ROS_GUMMI_EE)/meshes/g_lfl.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="g_lfl_j"
+    type="revolute">
+    <origin
+      xyz="0.03142 -0.041399 0.037328"
+      rpy="0 0 0" />
+    <parent
+      link="gbase" />
+    <child
+      link="g_lfl" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="0"
+      velocity="0" />
+      <mimic joint="g_um_j"/>
+  </joint>
+  <link
+    name="wrist_ext_pulley">
+    <inertial>
+      <origin
+        xyz="-4.84838647018399E-07 -0.0075666480675267 -1.39306801999958E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0125142001772949" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_ee_$(env ROS_GUMMI_EE)/meshes/wrist_ext_pulley.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_ee_$(env ROS_GUMMI_EE)/meshes/wrist_ext_pulley.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wrist_ext_pulley_joint"
+    type="continuous">
+    <origin
+      xyz="0.091851 0.03525 -0.01805"
+      rpy="0 0 0" />
+    <parent
+      link="lowerarm" />
+    <child
+      link="wrist_ext_pulley" />
+    <axis
+      xyz="0 -1 0" />
+      <mimic joint="wrist_pitch"/>
+  </joint>
+  <link
+    name="wrist_flex_pulley">
+    <inertial>
+      <origin
+        xyz="4.84838646971561E-07 0.00756664806752669 -1.39306801999698E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.012514200177295" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_ee_$(env ROS_GUMMI_EE)/meshes/wrist_flex_pulley.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_ee_$(env ROS_GUMMI_EE)/meshes/wrist_flex_pulley.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wrist_flex_pulley_joint"
+    type="continuous">
+    <origin
+      xyz="0.092063 -0.035257 0.018369"
+      rpy="0 0 0" />
+    <parent
+      link="lowerarm" />
+    <child
+      link="wrist_flex_pulley" />
+    <axis
+      xyz="0 -1 0" />
+      <mimic joint="wrist_pitch"/>
+  </joint>
+  <!-- Defining my dummy joints and links to make it controllable by moveit -->
+  <link name="tool"/>
+  <link name="fake_gripper"/>
+
+  <joint name="gripper" type="prismatic">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="gbase" />
+    <child
+      link="fake_gripper" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="1"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <joint name="coupling_tool" type="fixed">
+    <origin
+      xyz="0.1 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="gbase" />
+    <child
+      link="tool" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="1"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

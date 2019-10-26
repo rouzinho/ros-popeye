@@ -1,0 +1,8 @@
+prefix=/home/altair/ws_gummi_popeye/install
+
+Name: gummi_ee_popeye
+Description: Description of gummi_ee_popeye
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/altair/ws_gummi_popeye/install/lib 
+Requires: 

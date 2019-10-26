@@ -1,0 +1,9 @@
+[35m[1mScanning dependencies of target gummi_base_template_xacro_generated_to_devel_space_[0m
+[35m[1mScanning dependencies of target urdfgen[0m
+** Creating URDF file from gummi_description_base.urdf.xacro and gummi_description_ee.urdf.xacro.
+Built target gummi_base_template_xacro_generated_to_devel_space_
+[35m[1mScanning dependencies of target yamlgen[0m
+** Creating combine YAML files from gummi_ee and gummi_base.
+Built target yamlgen
+** Creating SRDF file from gummi_base.srdf.xacro and gummi_ee.srdf.xacro.
+Built target urdfgen

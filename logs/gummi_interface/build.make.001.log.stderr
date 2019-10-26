@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py", line 41, in <module>
+    import genmsg.template_tools
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/genmsg/template_tools.py", line 39, in <module>
+    import em
+  File "/home/altair/.virtualenvs/gummi/local/lib/python2.7/site-packages/vext/gatekeeper/__init__.py", line 204, in load_module
+    raise ImportError("No module named %s" % modulename)
+ImportError: No module named em
+make[2]: *** [/home/altair/ws_gummi_popeye/devel/.private/gummi_interface/include/gummi_interface/Diagnostics.h] Error 1
+make[1]: *** [CMakeFiles/gummi_interface_generate_messages_cpp.dir/all] Error 2
+make: *** [all] Error 2

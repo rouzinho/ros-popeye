@@ -1,0 +1,8 @@
+Symlinking /home/altair/ws_gummi_popeye/devel/./_setup_util.py
+Symlinking /home/altair/ws_gummi_popeye/devel/./setup.sh
+Symlinking /home/altair/ws_gummi_popeye/devel/./setup.zsh
+Symlinking /home/altair/ws_gummi_popeye/devel/./env.sh
+Symlinking /home/altair/ws_gummi_popeye/devel/./setup.bash
+Symlinking /home/altair/ws_gummi_popeye/devel/lib/pkgconfig/catkin_tools_prebuild.pc
+Symlinking /home/altair/ws_gummi_popeye/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig.cmake
+Symlinking /home/altair/ws_gummi_popeye/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig-version.cmake

@@ -1,0 +1,8 @@
+prefix=/home/altair/ws_gummi_popeye/install
+
+Name: gummi-kinematics
+Description: Description of gummi-kinematics
+Version: 0.0.0
+Cflags: -I/usr/include/eigen3
+Libs: -L/home/altair/ws_gummi_popeye/install/lib -linteractivity_utils
+Requires: moveit_core moveit_visual_tools moveit_ros_planning_interface interactive_markers

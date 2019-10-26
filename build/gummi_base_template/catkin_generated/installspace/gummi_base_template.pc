@@ -1,0 +1,8 @@
+prefix=/home/altair/ws_gummi_popeye/install
+
+Name: gummi_base_template
+Description: Description of gummi_base_template
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/altair/ws_gummi_popeye/install/lib 
+Requires: 

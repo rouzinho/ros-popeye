@@ -1,0 +1,6 @@
+<package>
+  <description brief="gummi_ee_popeye">gummi_ee_popeye</description>
+  <depend package="gazebo" />
+  <author>Frederico Belmonte Klein</author>
+  <license>BSD</license>
+</package>

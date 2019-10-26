@@ -1,0 +1,8 @@
+prefix=/home/altair/ws_gummi_popeye/devel
+
+Name: gummi_interface
+Description: Description of gummi_interface
+Version: 0.0.0
+Cflags: -I/home/altair/ws_gummi_popeye/devel/include
+Libs: -L/home/altair/ws_gummi_popeye/devel/lib 
+Requires: 

@@ -1,0 +1,2 @@
+gummi-kinematics:gummi_base_template:gummi_ee_popeye:gummi_interface:gummi_moveit
+-DCATKIN_DEVEL_PREFIX=/home/altair/ws_gummi_popeye/devel -DCMAKE_INSTALL_PREFIX=/home/altair/ws_gummi_popeye/install -G Unix Makefiles

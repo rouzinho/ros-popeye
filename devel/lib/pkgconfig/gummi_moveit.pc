@@ -1,0 +1,8 @@
+prefix=/home/altair/ws_gummi_popeye/devel
+
+Name: gummi_moveit
+Description: Description of gummi_moveit
+Version: 0.3.0
+Cflags: 
+Libs: -L/home/altair/ws_gummi_popeye/devel/lib 
+Requires: 

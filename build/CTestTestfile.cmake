@@ -1,0 +1,12 @@
+# CMake generated Testfile for 
+# Source directory: /home/altair/ws_gummi_popeye/src
+# Build directory: /home/altair/ws_gummi_popeye/build
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+subdirs(gtest)
+subdirs(gummi_base_template)
+subdirs(gummi_ee_popeye)
+subdirs(gummi_moveit)
+subdirs(gummi_interface)
+subdirs(gummi-kinematics)

@@ -1,0 +1,25 @@
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target _gummi_interface_generate_messages_check_deps_Diagnostics
+[  0%] Built target std_msgs_generate_messages_cpp
+[ 14%] Built target gummi_interface_generate_messages_lisp
+[ 42%] Built target gummi_interface_generate_messages_py
+[ 71%] Built target gummi_interface_generate_messages_eus
+[ 85%] Built target gummi_interface_generate_messages_nodejs
+[100%] [34m[1mGenerating C++ code from gummi_interface/Diagnostics.msg[0m
+Traceback (most recent call last):
+  File "/opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py", line 41, in <module>
+    import genmsg.template_tools
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/genmsg/template_tools.py", line 39, in <module>
+    import em
+  File "/home/altair/.virtualenvs/gummi/local/lib/python2.7/site-packages/vext/gatekeeper/__init__.py", line 204, in load_module
+    raise ImportError("No module named %s" % modulename)
+ImportError: No module named em
+CMakeFiles/gummi_interface_generate_messages_cpp.dir/build.make:62: recipe for target '/home/altair/ws_gummi_popeye/devel/.private/gummi_interface/include/gummi_interface/Diagnostics.h' failed
+make[2]: *** [/home/altair/ws_gummi_popeye/devel/.private/gummi_interface/include/gummi_interface/Diagnostics.h] Error 1
+CMakeFiles/Makefile2:263: recipe for target 'CMakeFiles/gummi_interface_generate_messages_cpp.dir/all' failed
+make[1]: *** [CMakeFiles/gummi_interface_generate_messages_cpp.dir/all] Error 2
+Makefile:138: recipe for target 'all' failed
+make: *** [all] Error 2
